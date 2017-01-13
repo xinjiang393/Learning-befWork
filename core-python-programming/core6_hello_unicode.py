@@ -15,11 +15,11 @@ with open(FILE, 'w') as f:
   f.write(bytes_out)
 
 #讲文件内容打印至屏幕
-
 with open(FILE, 'r')  as f:
   bytes_in = f.read()
   hello_in = bytes_in.decode(CODEC)
 print(hello_in)
+
 """
 注：在Python3.6.1中，line15会报错：write() argment must be str, not bytes
 """

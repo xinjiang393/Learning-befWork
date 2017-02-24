@@ -62,3 +62,26 @@ Traceback (most recent call last):
 UnboundLocalError: local variable 'count' referenced before assignment
 cout的类型是int和list有什么不同？？
 """
+
+
+j, k = 1, 2
+def proc1():
+	j, k = 3, 4
+	print(j, k)
+	k = 5
+def proc2():
+	j = 6
+	proc1()
+	print(j, k)
+
+>>>k = 7
+>>>proc1()
+3, 4
+>>>print(j, k)
+2, 7
+>>>j = 8
+>>>proc2()
+3, 4 #local scope of proc1()
+6, 7 #6 is local scope of proc2() and 7 is global scope of main()
+>>>print(j, k)
+8, 7 #Both of them are global scope of main()

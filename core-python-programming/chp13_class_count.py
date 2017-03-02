@@ -48,3 +48,9 @@ class Bar(object):
 {2003:"poe2", 2004:"valid path"}
 >>>id(bar.x) == id(Bar.x)
 True
+"""
+It is perilous to try and modify a class attribute by using an instance attribute.The reason is because
+instances have their own set of attribute, and there is no clear way in Python to indicate that you want
+to modify the class attribute of the samne name.Always modify a class attribute with the class name,not
+an instances.
+"""
